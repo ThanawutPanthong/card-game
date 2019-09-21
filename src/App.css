@@ -11,6 +11,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 1em;
   user-select: none;
+  font-family: 'Patrick Hand', cursive;
  }
  
  .activeCard {
@@ -44,9 +45,11 @@
   font-size: 1.5em;
   font-style: normal;
   font-style: italic;
+  font-family: 'Patrick Hand', cursive;
 }
 
 #results{
+  font-family: 'Patrick Hand', cursive;
   text-align: center;
   color: yellowgreen;
   background-color: royalblue;
@@ -56,6 +59,7 @@
 }
 
 #wordenter{
+  font-family: 'Patrick Hand', cursive;
   text-align: center;
   color: yellow;
   background-color: chocolate;
@@ -65,6 +69,7 @@
 }
 
 .button{
+  font-family: 'Patrick Hand', cursive;
   text-align: center;
   display: inline-block;
   font-size: 2em;
@@ -78,8 +83,10 @@
 
 #newgame{
   display: none;
+  font-family: 'Patrick Hand', cursive;
 }
 
 #answer{
   display: inline-block;
+  font-family: 'Patrick Hand', cursive;
 }
