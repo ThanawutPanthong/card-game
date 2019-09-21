@@ -79,3 +79,7 @@
 #newgame{
   display: none;
 }
+
+#answer{
+  display: inline-block;
+}

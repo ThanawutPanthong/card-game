@@ -31,6 +31,7 @@ export default class WordCard extends Component {
                 this.setState({guess: [], complete: true})
                 document.getElementById('results').innerHTML = `Congratulations! Or Succees`
                 document.getElementById('newgame').style.display = "inline-block";
+                document.getElementById('answer').style.display = "none";
                 
             }else{
                 this.setState({guess: [], attempt: this.state.attempt + 1})
@@ -46,10 +47,14 @@ export default class WordCard extends Component {
     }
        
 render() {
+    if(this.props.requestAnswer){
+        this.props.getAnswer(this.state.chars.join(''))
+    }
  return (
  <div>
 { Array.from(this.props.value).map((c, i) => <CharacterCard value={c} key={i} activationHandler={this.activationHandler}{...this.state}/>
-) }
+) 
+}
  </div>
  );
  }
