@@ -11,7 +11,7 @@ class App extends Component {
  < div className = "App">
    <h2 id="layer">Random Game</h2>
     <WordCard value = {item.toUpperCase()}/>
-    <h2 id ="results"></h2>
+    <h2 id ="results">Let's Play</h2>
  </div>
  );
  }
