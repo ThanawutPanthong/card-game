@@ -3,29 +3,38 @@ export default class Countdown extends Component{
 constructor(props){
     super(props)
     this.state = {
-        timerOn: false,
-        timerStart: 0,
-        timerTime: 5000
-    };
+        count: true
+    }
 }
 
-  startTimer = () => {
-    this.setState({
-      timerOn: true,
-      timerTime: this.state.timerTime,
-      timerStart: this.state.timerTime
-    });
-    this.timer = setInterval(() => {
-      const newTime = this.state.timerTime - 10;
-      if (newTime >= 0) {
-        this.setState({
-          timerTime: newTime
-        });
-      } else {
-        clearInterval(this.timer);
-        this.setState({ timerOn: false });
-        alert("Countdown ended");
+  render(){
+      const {count} = this.state
+      if(this.state.count <= 0)
+      {
+        setTimeout(() => window.location.reload(false),500)
       }
-    }, 10);
-  };
+    return(
+        <div>
+            <h1 className = "time"> 
+              Time: {count}
+            </h1>
+        </div>
+    )
+  }
+
+  componentDidMount (){
+    const {startCount} = this.props
+    this.setState({count: startCount})
+    this.doIntervalChange()
+}
+
+  doIntervalChange = () =>{
+    this.myInteval = setInterval(() =>{
+      this.setState(prevState =>({count: prevState.count-1}))
+    },1000)
+  }
+
+  componentWillMount (){
+    clearInterval(this.myInteval)
+  }
 }
