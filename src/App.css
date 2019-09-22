@@ -39,10 +39,10 @@
 }
 
 #layer{
+
   color: brown ; 
   text-align: center;
-  font-size: 40px;
-  font-size: 1.5em;
+  font-size: 3em;
   font-style: normal;
   font-style: italic;
   font-family: 'Patrick Hand', cursive;
@@ -73,12 +73,14 @@
   text-align: center;
   display: inline-block;
   font-size: 2em;
-  background-color: tan;
+  background-color: plum;
+  text-decoration: none;
   font-family:'Raleway', 'sans-serif'; 
   margin: auto;
   width: 100%;
-  border: 3px solid green;
+  border: 3px solid red;
   padding: 10px;
+  border-radius: 12px
 }
 
 #newgame{
@@ -87,6 +89,11 @@
 }
 
 #answer{
+  display: inline-block;
+  font-family: 'Patrick Hand', cursive;
+}
+
+#hint{
   display: inline-block;
   font-family: 'Patrick Hand', cursive;
 }

@@ -9,7 +9,7 @@ var item = word[Math.floor(Math.random()*word.length)];
 class App extends Component {
   constructor(){
     super();
-    this.state = {requestAnswer: false}
+    this.state = {requestAnswer: false,requestHint: false}
   }
   newgame = () => {
     window.location.reload(false);
@@ -20,6 +20,14 @@ class App extends Component {
 
   requestAnswer = () =>{
     this.setState({requestAnswer: true});
+  }
+
+  requestHint = () =>{
+    this.setState({requestHint: true});
+  }
+
+  getHint = (hint) =>{
+    document.getElementById('wordenter').innerHTML = `Hint is : ${hint}`
   }
 
   getAnswer = (answer) =>{
@@ -34,7 +42,9 @@ class App extends Component {
     <br></br>
     <WordCard value = {item.toUpperCase()}
     getAnswer = {this.getAnswer}
-    requestAnswer = {this.state.requestAnswer}/>
+    getHint = {this.getHint}
+    requestAnswer = {this.state.requestAnswer}
+    requestHint ={this.state.requestHint}/>
     <br></br>
     <br></br>
     <h1 id ="results">Let's Play</h1>
@@ -42,6 +52,8 @@ class App extends Component {
     </div>
     <button id="newgame" className="button" onClick={this.newgame}>NEW GAME</button>
     <button id="answer" className="button" onClick = {this.requestAnswer}>Answer</button>
+    <br></br><br></br>
+    <button id ="hint" className = "button" onClick={this.requestHint}>Hint</button>
     <br></br><br></br>
     <button className ="button" onClick={this.close}>Quit</button>
   </div>
